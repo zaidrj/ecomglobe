@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/**
+ * Global CSS with Tailwind directives and base styles
+ * Design tokens are defined in lib/tokens.ts and will be extended here
+ * when extracted from Figma (T011)
+ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  /* Design tokens from Figma (extracted via MCP) */
+  /* Colors */
+  --color-primary: #06010E;
+  --color-secondary: #050505;
+  --color-accent: #8539BF;
+  --color-purple-light: #E1C8FF;
+  --color-purple-medium: #AB78E9;
+  --color-purple-dark: #7300FF;
+  --color-pink-light: #F9F6FF;
+  --color-pink-medium: #BB7CE4;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #F9F6FF;
+  --color-text-muted: #C8CDD2;
+  --color-border: #AB78E9;
+  --color-white: #FFFFFF;
+  
+  /* Typography - Font families from design tokens */
+  --font-primary: var(--font-primary), 'Poppins', sans-serif;
+  --font-secondary: var(--font-secondary), 'Lexend', sans-serif;
+  --font-body: var(--font-body), 'Red Hat Display', sans-serif;
+  --font-display: var(--font-display), 'Space Grotesk', sans-serif;
+  
+  /* Font sizes (rem) */
+  --font-size-xs: 0.875rem; /* 14px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.375rem; /* 22px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 2rem; /* 32px */
+  --font-size-4xl: 3rem; /* 48px */
+  --font-size-5xl: 3.625rem; /* 58px */
+  
+  /* Spacing (rem) */
+  --spacing-xs: 0.375rem; /* 6px */
+  --spacing-sm: 0.625rem; /* 10px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.25rem; /* 20px */
+  --spacing-xl: 1.875rem; /* 30px */
+  --spacing-2xl: 2.5rem; /* 40px */
+  --spacing-3xl: 3.125rem; /* 50px */
+  --spacing-4xl: 6.1875rem; /* 99px */
+  
+  /* Border radius */
+  --radius-sm: 0.4375rem; /* 7px */
+  --radius-md: 0.6875rem; /* 11px */
+  --radius-lg: 1.125rem; /* 18px */
+  --radius-xl: 1.5rem; /* 24px */
+  --radius-full: 6.1875rem; /* 99px */
+  
+  /* Shadows */
+  --shadow-sm: 0px 5.172px 42.427px 0px rgba(171, 120, 233, 0.32);
+  --shadow-md: 0px 20.698px 38.735px -48px rgba(132, 0, 255, 0.33);
+  --shadow-lg: 0px 20.698px 38.735px -48px rgba(132, 0, 255, 0.33);
+  --shadow-glow: 0px 20.698px 38.735px -48px rgba(132, 0, 255, 0.33);
+  
+  /* Legacy Tailwind variables */
+  --color-background: var(--color-secondary);
+  --color-foreground: var(--color-text-primary);
+  --font-sans: var(--font-primary);
+  --font-mono: var(--font-display);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--color-secondary);
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+}
+
+/* Accessibility: Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1em;
+}
+
+/* Accessibility: Focus visible styles */
+*:focus-visible {
+  outline: 2px solid var(--color-purple-medium);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Base styles for responsive design */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+
+
+/* Graceful degradation for extreme viewports (per FR-014) */
+@media (max-width: 319px) {
+  body {
+    min-width: 320px;
+    overflow-x: auto;
+  }
+}
+
+@media (min-width: 2561px) {
+  body {
+    max-width: 2560px;
+    margin: 0 auto;
+  }
+}
+
+/* Responsive breakpoints (mobile-first approach) */
+/* Mobile: 320px+ (base styles) */
+/* Tablet: 768px+ (md: breakpoint) */
+/* Desktop: 1024px+ (lg: breakpoint) */
+
+/* Form submission animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes checkmark {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Allow ChatGPT's crawler (OpenAI)
+User-agent: ChatGPT-User
+Allow: /
+
+# Allow OpenAI's CCBot (used for ChatGPT browsing & training)
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.ecommglobe.com/sitemap.xml
