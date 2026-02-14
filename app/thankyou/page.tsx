@@ -180,27 +180,70 @@ export default function ThankYouPage() {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-[23.655px] items-center mt-4 md:mt-8 w-full sm:w-auto">
-                <Link
-                  href="/"
-                  className="border-[#7300ff] border border-solid px-4 md:px-[19.712px] py-3 md:py-[14.784px] rounded-full md:rounded-[19.712px] shadow-[0px_20.698px_38.735px_-48px_rgba(132,0,255,0.33)] font-primary font-bold leading-[1.3] not-italic text-[14px] md:text-[18px] text-center text-white uppercase w-full sm:w-auto transition-all duration-200 hover:shadow-[0px_0px_30px_5px_rgba(132,0,255,0.6),0px_20.698px_38.735px_-48px_rgba(132,0,255,0.5)] active:opacity-80 inline-block cursor-pointer relative z-10"
-                  style={{
-                    backgroundImage: `radial-gradient(ellipse at center, rgba(132,0,255,0.59) 0%, rgba(115,0,255,0) 100%)`,
-                  }}
-                >
-                  Back to Home
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="border-[#ab78e9] border border-solid bg-transparent px-4 md:px-[19.712px] py-3 md:py-[14.784px] rounded-full md:rounded-[19.712px] shadow-[0px_20.698px_38.735px_-48px_rgba(132,0,255,0.33)] font-primary font-bold leading-[1.3] not-italic text-[14px] md:text-[18px] text-center text-[#c8cdd2] uppercase w-full sm:w-auto transition-all duration-200 hover:shadow-[0px_0px_30px_5px_rgba(171,120,233,0.6),0px_20.698px_38.735px_-48px_rgba(132,0,255,0.5)] active:opacity-80 inline-block cursor-pointer relative z-10"
-                >
-                  View Case Studies
-                </Link>
-              </div>
             </div>
           </Container>
         </Section>
+
+        {/* Video Testimonials Section */}
+        <section id="videos" className="relative w-full bg-[#050505] overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <div className="absolute left-0 top-[20%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at left center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
+            <div className="absolute right-0 bottom-[10%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at right center, rgba(145,55,255,0.18) 0%, rgba(115,0,255,0.06) 45%, transparent 80%)' }} />
+          </div>
+
+          <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-16 lg:py-20">
+            <div className="flex flex-col gap-6 md:gap-8">
+              {/* Video 1 - Left aligned */}
+              <div className="w-full md:w-[75%] md:mr-auto">
+                <div className="relative w-full aspect-[16/9] rounded-[16px] md:rounded-[20px] overflow-hidden border border-[#AB78E9]/30">
+                  <iframe
+                    src="https://player.vimeo.com/video/1164964616?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0"
+                    width="1920"
+                    height="1080"
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    title="thank you page 1"
+                  />
+                </div>
+              </div>
+              {/* Video 2 - Right aligned */}
+              <div className="w-full md:w-[75%] md:ml-auto">
+                <div className="relative w-full aspect-[16/9] rounded-[16px] md:rounded-[20px] overflow-hidden border border-[#AB78E9]/30">
+                  <iframe
+                    src="https://player.vimeo.com/video/1164964705?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0"
+                    width="1920"
+                    height="1080"
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    title="thank you page 2"
+                  />
+                </div>
+              </div>
+              {/* Video 3 - Left aligned */}
+              <div className="w-full md:w-[75%] md:mr-auto">
+                <div className="relative w-full aspect-[16/9] rounded-[16px] md:rounded-[20px] overflow-hidden border border-[#AB78E9]/30">
+                  <iframe
+                    src="https://player.vimeo.com/video/1164964750?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0"
+                    width="1920"
+                    height="1080"
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    title="thank you page 3"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
