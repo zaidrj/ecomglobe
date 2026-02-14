@@ -414,7 +414,7 @@ export default function FooterWithForm({ className = "" }: { className?: string 
                 <Heading variant="small" className="text-[14px] sm:text-[16px] md:text-[18px] uppercase">Have Questions?</Heading>
                 <div className="flex flex-col items-center lg:items-start gap-1 md:gap-[8px] font-body text-[12px] md:text-[14px] text-[#F9F6FF]">
                   <p>Email: <span className="text-[#E2A4FF]">info@ecommglobe.com</span></p>
-                  <p>Phone: <span className="text-[#E2A4FF]">+123 456 7890</span></p>
+                  <p>Phone: <span className="text-[#E2A4FF]">+14692050582</span></p>
                 </div>
               </div>
             </div>

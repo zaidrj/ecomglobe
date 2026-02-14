@@ -37,8 +37,8 @@ const contactMethods: ContactMethod[] = [
     id: '3',
     icon: '/images/contact/methods/mingcute-location-line.svg',
     title: 'Visit Us',
-    info: '123 Commerce Street',
-    context: 'New York, NY 10001',
+    info: '187 COUNTRY CLUB DR APT 8',
+    context: 'SOUTH SAN FRANCISCO, CA 94080',
   },
   {
     id: '4',

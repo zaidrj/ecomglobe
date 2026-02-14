@@ -140,7 +140,7 @@ export default function Footer({ className = "" }: { className?: string }) {
                    Email: <span className="text-[#E2A4FF]">info@ecommglobe.com</span>
                  </p>
                  <p>
-                   Phone: <span className="text-[#E2A4FF]">+123 456 7890</span>
+                   Phone: <span className="text-[#E2A4FF]">+14692050582</span>
                  </p>
                </div>
             </div>
