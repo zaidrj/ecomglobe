@@ -5,6 +5,16 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Etsy Optimization Agency - Shop Setup & SEO Services",
+  description: "EcommGlobe's Etsy optimization services help sellers increase visibility and sales. Shop setup, SEO optimization, listing optimization & advertising management for Etsy sellers.",
+  keywords: ["etsy optimization", "etsy seo", "etsy shop setup", "etsy marketing", "etsy seller services", "ecommglobe etsy"],
+  alternates: { canonical: "https://www.ecommglobe.com/etsy-optimization" },
+  openGraph: { title: "Etsy Optimization Agency - Shop Setup & SEO | EcommGlobe", description: "Professional Etsy optimization services. Increase visibility and sales on Etsy.", url: "https://www.ecommglobe.com/etsy-optimization" },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import EtsyHeroSection from '@/components/sections/EtsyHeroSection';

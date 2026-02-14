@@ -5,6 +5,16 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Shopify Development Agency - Store Setup & Optimization",
+  description: "Expert Shopify development services by EcommGlobe. Custom store setup, theme development, app integration, SEO optimization & conversion rate optimization for your Shopify store.",
+  keywords: ["shopify development agency", "shopify store setup", "shopify optimization", "shopify experts", "ecommglobe shopify"],
+  alternates: { canonical: "https://www.ecommglobe.com/shopify-development" },
+  openGraph: { title: "Shopify Development Agency - Store Setup & Optimization | EcommGlobe", description: "Professional Shopify development services. Store setup, theme customization & growth strategies.", url: "https://www.ecommglobe.com/shopify-development" },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import ShopifyHeroSection from '@/components/sections/ShopifyHeroSection';

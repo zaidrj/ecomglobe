@@ -1,9 +1,22 @@
 /**
  * Home Page
- * 
+ *
  * Main page structure matching Figma design exactly.
  * All sections are implemented as separate components for maintainability.
  */
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "EcommGlobe - #1 Ecommerce Marketing & Automation Agency | EcomGlobe",
+  description: "EcommGlobe is the leading ecommerce marketing and automation agency. We help brands launch, optimize, and scale on Amazon, Shopify, Etsy, Walmart, eBay & TikTok Shop. Get your free strategy call today.",
+  alternates: { canonical: "https://www.ecommglobe.com" },
+  openGraph: {
+    title: "EcommGlobe - #1 Ecommerce Marketing & Automation Agency",
+    description: "Scale your brand across every marketplace. Expert ecommerce services for Amazon, Shopify, Etsy, Walmart, eBay & TikTok Shop.",
+    url: "https://www.ecommglobe.com",
+  },
+};
 
 import Section from '@/components/layout/Section';
 import Navbar from '@/components/sections/Navbar';

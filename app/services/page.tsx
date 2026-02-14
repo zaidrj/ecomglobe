@@ -5,6 +5,19 @@
  * All sections are implemented as separate components for maintainability.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Ecommerce Services - Amazon, Shopify, Etsy, Walmart, eBay, TikTok",
+  description: "Full-service ecommerce solutions by EcommGlobe. Amazon marketing, Shopify development, Etsy optimization, Walmart marketplace, eBay management & TikTok Shop setup. Scale your online business today.",
+  alternates: { canonical: "https://www.ecommglobe.com/services" },
+  openGraph: {
+    title: "Ecommerce Services - Amazon, Shopify, Etsy, Walmart, eBay, TikTok",
+    description: "Comprehensive ecommerce services across all major marketplaces. From store setup to scaling, EcommGlobe handles everything.",
+    url: "https://www.ecommglobe.com/services",
+  },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import ServicesHeroSection from '@/components/sections/ServicesHeroSection';

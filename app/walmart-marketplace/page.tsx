@@ -5,6 +5,16 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Walmart Marketplace Management - Seller Services & Optimization",
+  description: "EcommGlobe's Walmart marketplace services help brands launch and scale on Walmart. Account setup, catalog management, advertising & fulfillment optimization.",
+  keywords: ["walmart marketplace", "walmart seller services", "walmart management", "walmart optimization", "ecommglobe walmart"],
+  alternates: { canonical: "https://www.ecommglobe.com/walmart-marketplace" },
+  openGraph: { title: "Walmart Marketplace Management - Seller Services | EcommGlobe", description: "Expert Walmart marketplace management. Launch and scale your Walmart business.", url: "https://www.ecommglobe.com/walmart-marketplace" },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import WalmartHeroSection from '@/components/sections/WalmartHeroSection';

@@ -5,6 +5,19 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About EcommGlobe - Our Mission & Ecommerce Expertise",
+  description: "Learn about EcommGlobe (EcomGlobe), the ecommerce marketing agency helping brands scale across Amazon, Shopify, Etsy, Walmart, eBay & TikTok Shop. Meet our team of ecommerce experts.",
+  alternates: { canonical: "https://www.ecommglobe.com/about" },
+  openGraph: {
+    title: "About EcommGlobe - Our Mission & Ecommerce Expertise",
+    description: "Meet the team behind EcommGlobe. We are ecommerce-only experts dedicated to launching and scaling your online business.",
+    url: "https://www.ecommglobe.com/about",
+  },
+};
+
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';

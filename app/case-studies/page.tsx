@@ -5,6 +5,19 @@
  * Sections are organized sequentially with proper spacing.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Case Studies - Ecommerce Success Stories | EcommGlobe",
+  description: "See how EcommGlobe helped brands scale their ecommerce business. Real results from Amazon, Shopify, Etsy, Walmart, eBay & TikTok Shop campaigns.",
+  alternates: { canonical: "https://www.ecommglobe.com/case-studies" },
+  openGraph: {
+    title: "Case Studies - Ecommerce Success Stories | EcommGlobe",
+    description: "Real ecommerce success stories and results from EcommGlobe clients across multiple marketplaces.",
+    url: "https://www.ecommglobe.com/case-studies",
+  },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import CaseStudiesHeroSection from '@/components/sections/CaseStudiesHeroSection';

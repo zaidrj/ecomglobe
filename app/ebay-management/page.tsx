@@ -5,6 +5,16 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "eBay Management Services - Store Optimization & Growth",
+  description: "EcommGlobe's eBay management services help sellers optimize listings, manage inventory, and scale sales. Professional eBay store setup & advertising management.",
+  keywords: ["ebay management", "ebay optimization", "ebay store setup", "ebay seller services", "ecommglobe ebay"],
+  alternates: { canonical: "https://www.ecommglobe.com/ebay-management" },
+  openGraph: { title: "eBay Management Services - Store Optimization | EcommGlobe", description: "Professional eBay management services. Optimize and scale your eBay business.", url: "https://www.ecommglobe.com/ebay-management" },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import EbayHeroSection from '@/components/sections/EbayHeroSection';

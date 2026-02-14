@@ -5,6 +5,16 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Amazon Marketing Agency - Full Service Amazon Account Management",
+  description: "EcommGlobe is a top Amazon marketing agency offering full-service Amazon account management, PPC advertising, listing optimization, FBA setup & brand growth strategies. Scale your Amazon business today.",
+  keywords: ["amazon marketing agency", "amazon account management", "amazon ppc", "amazon fba", "amazon seller services", "amazon listing optimization", "ecommglobe amazon"],
+  alternates: { canonical: "https://www.ecommglobe.com/amazon-marketing" },
+  openGraph: { title: "Amazon Marketing Agency - Full Service Account Management | EcommGlobe", description: "Expert Amazon marketing services. PPC management, listing optimization, FBA setup & more.", url: "https://www.ecommglobe.com/amazon-marketing" },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import AmazonHeroSection from '@/components/sections/AmazonHeroSection';

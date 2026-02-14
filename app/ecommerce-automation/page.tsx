@@ -17,9 +17,16 @@ import FooterWithForm from '@/components/sections/FooterWithForm';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 
 export const metadata: Metadata = {
-  title: 'Ecommerce Automation - EcommGlobe',
+  title: 'Ecommerce Automation Services - Automate & Scale Your Online Store',
   description:
-    'Automate your ecommerce operations across Amazon, Shopify, Etsy, Walmart, eBay & TikTok Shop. Book a free strategy call to learn how we can help you achieve $4,000+ in sales in 60 days.',
+    'EcommGlobe ecommerce automation services help you automate operations across Amazon, Shopify, Etsy, Walmart, eBay & TikTok Shop. Book a free strategy call and achieve $4,000+ in sales in 60 days.',
+  keywords: ["ecommerce automation", "ecommerce automation agency", "automated ecommerce", "ecommerce scaling", "ecommglobe automation"],
+  alternates: { canonical: "https://www.ecommglobe.com/ecommerce-automation" },
+  openGraph: {
+    title: "Ecommerce Automation Services | EcommGlobe",
+    description: "Automate your ecommerce operations and scale your online business. Free strategy call available.",
+    url: "https://www.ecommglobe.com/ecommerce-automation",
+  },
 };
 
 export default function EcommerceAutomationPage() {

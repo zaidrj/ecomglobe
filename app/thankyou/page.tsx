@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: 'Thank You - EcommGlobe',
   description:
     'Thank you for booking your free strategy call with EcommGlobe. We look forward to helping you scale your ecommerce business.',
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouPage() {

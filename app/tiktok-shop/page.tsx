@@ -5,6 +5,16 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "TikTok Shop Agency - Setup, Optimization & Creator Partnerships",
+  description: "EcommGlobe's TikTok Shop services help brands launch and scale on TikTok. Shop setup, product listing, creator partnerships & TikTok advertising management.",
+  keywords: ["tiktok shop agency", "tiktok shop setup", "tiktok marketing", "tiktok shop management", "ecommglobe tiktok"],
+  alternates: { canonical: "https://www.ecommglobe.com/tiktok-shop" },
+  openGraph: { title: "TikTok Shop Agency - Setup & Optimization | EcommGlobe", description: "Expert TikTok Shop services. Launch and scale your TikTok commerce business.", url: "https://www.ecommglobe.com/tiktok-shop" },
+};
+
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import TikTokHeroSection from '@/components/sections/TikTokHeroSection';
