@@ -200,7 +200,7 @@ export default function ServicesPage() {
               }}
             />
             {/* Decorative globe - right side */}
-            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-25" />
+            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-55" />
           </div>
           <ServicesHeroSection />
         </Section>
@@ -221,7 +221,7 @@ export default function ServicesPage() {
             {/* Left purple glow */}
             <div className="absolute left-0 top-[20%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at left center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
             {/* Decorative globe - left side, flipped */}
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-70px] md:left-[-30px] top-[15%] w-[160px] md:w-[270px] lg:w-[350px] opacity-25 -scale-x-100" />
+            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-70px] md:left-[-30px] top-[15%] w-[160px] md:w-[270px] lg:w-[350px] opacity-55 -scale-x-100" />
           </div>
           <div className="px-4 md:px-6">
             <PlatformServicesSection services={services} />
@@ -251,7 +251,7 @@ export default function ServicesPage() {
             {/* Right purple glow */}
             <div className="absolute right-0 top-[10%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at right center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
             {/* Decorative globe - right side */}
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute right-[-70px] md:right-[-30px] top-[5%] w-[160px] md:w-[270px] lg:w-[350px] opacity-25" />
+            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute right-[-70px] md:right-[-30px] top-[5%] w-[160px] md:w-[270px] lg:w-[350px] opacity-55" />
           </div>
           <ProcessSection steps={processSteps} />
         </Section>
@@ -279,7 +279,7 @@ export default function ServicesPage() {
             {/* Left purple glow */}
             <div className="absolute left-0 bottom-[10%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at left center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
             {/* Decorative globe - left side, flipped */}
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-70px] md:left-[-30px] bottom-[-20px] w-[160px] md:w-[270px] lg:w-[350px] opacity-25 -scale-x-100" />
+            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-70px] md:left-[-30px] bottom-[-20px] w-[160px] md:w-[270px] lg:w-[350px] opacity-55 -scale-x-100" />
           </div>
           <TestimonialsSection />
         </Section>
@@ -307,7 +307,7 @@ export default function ServicesPage() {
             {/* Enhanced purple glow - right side */}
             <div className="absolute right-0 bottom-[5%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at right center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
             {/* Decorative globe - right side */}
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute right-[-70px] md:right-[-30px] bottom-[-30px] w-[160px] md:w-[270px] lg:w-[350px] opacity-25" />
+            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute right-[-70px] md:right-[-30px] bottom-[-30px] w-[160px] md:w-[270px] lg:w-[350px] opacity-55" />
           </div>
           <ServicesCTASection />
         </Section>

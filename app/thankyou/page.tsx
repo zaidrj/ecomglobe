@@ -71,7 +71,7 @@ export default function ThankYouPage() {
               }}
             />
             {/* Decorative globe - right side */}
-            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-25" />
+            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-55" />
           </div>
 
           {/* Decorative ellipse container - Desktop only */}
@@ -141,7 +141,7 @@ export default function ThankYouPage() {
             {/* Enhanced purple glow - left side */}
             <div className="absolute left-0 top-[15%] w-[280px] md:w-[520px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at left center, rgba(132,0,255,0.22) 0%, rgba(115,0,255,0.1) 40%, transparent 75%)' }} />
             {/* Decorative globe - left side (flipped) */}
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-80px] md:left-[-40px] top-[20%] w-[160px] md:w-[260px] lg:w-[340px] opacity-25 -scale-x-100" />
+            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-80px] md:left-[-40px] top-[20%] w-[160px] md:w-[260px] lg:w-[340px] opacity-55 -scale-x-100" />
           </div>
 
           <Container size="lg" className="relative z-10 px-4 md:px-6">

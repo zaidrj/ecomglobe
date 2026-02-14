@@ -150,7 +150,7 @@ export default function ContactFormSection({
                 value={formData.phone}
                 onChange={(e) => handleChange('phone', e.target.value)}
                 className="bg-[rgba(11,11,11,0.41)] border border-[#ab78e9] border-solid h-[44px] sm:h-[50px] md:h-[55px] lg:h-[60px] rounded-[10px] w-full px-4 sm:px-5 text-[#e1c8ff] text-[14px] sm:text-[15px] lg:text-[16px] min-h-[44px]"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+14692050582"
               />
             </div>
 

@@ -30,24 +30,22 @@ export default function ContactProcessSection({
       </div>
 
       {/* Process steps container - Responsive layout */}
-      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-[7px] items-start w-full">
+      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-4 items-start w-full">
         {steps.map((step) => (
-          <div key={step.id} className="h-auto lg:h-[66.617px] relative shrink-0 w-full">
+          <div key={step.id} className="flex items-start gap-3 sm:gap-4 w-full">
             {/* Icon */}
-            <div className="absolute flex items-center justify-center left-0 size-[32px] sm:size-[36px] lg:size-[39.483px] top-0">
-              <div className="flex-none rotate-[319.365deg]">
-                <OptimizedImage
-                  src={step.icon}
-                  alt={step.title}
-                  width={28}
-                  height={28}
-                  className="relative size-[24px] sm:size-[26px] lg:size-[28px]"
-                />
-              </div>
+            <div className="shrink-0 flex items-center justify-center w-[32px] h-[32px] sm:w-[36px] sm:h-[36px] lg:w-[40px] lg:h-[40px] mt-0.5">
+              <OptimizedImage
+                src={step.icon}
+                alt={step.title}
+                width={28}
+                height={28}
+                className="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] lg:w-[28px] lg:h-[28px] rotate-[319.365deg]"
+              />
             </div>
 
             {/* Title and description */}
-            <div className="ml-[44px] sm:ml-[48px] lg:ml-[calc(50%-224.5px)] space-y-1">
+            <div className="flex-1 space-y-1">
               <p className="font-red-hat-display font-normal leading-[normal] text-[#c8cdd2] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px]">
                 {step.title}
               </p>

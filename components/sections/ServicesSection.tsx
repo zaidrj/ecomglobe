@@ -183,7 +183,7 @@ export default function ServicesSection() {
         {/* Right purple glow */}
         <div className="absolute right-0 top-[10%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at right center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
         {/* Decorative globe - right side */}
-        <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute right-[-70px] md:right-[-30px] top-[5%] w-[160px] md:w-[270px] lg:w-[350px] opacity-25" />
+        <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute right-[-70px] md:right-[-30px] top-[5%] w-[160px] md:w-[270px] lg:w-[350px] opacity-55" />
       </div>
 
       <Container size="xl" className="py-8 md:py-12 lg:py-16 relative z-10">

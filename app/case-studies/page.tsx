@@ -182,7 +182,7 @@ export default function CaseStudiesPage() {
               }}
             />
             {/* Decorative globe - right side */}
-            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-25" />
+            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-55" />
           </div>
           <CaseStudiesHeroSection />
         </Section>

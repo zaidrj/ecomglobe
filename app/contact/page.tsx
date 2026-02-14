@@ -30,7 +30,7 @@ const contactMethods: ContactMethod[] = [
     id: '2',
     icon: '/images/contact/methods/material-symbols-call-outline-sharp.svg',
     title: 'Call Us',
-    info: '+1 (555) 123-4567',
+    info: '+14692050582',
     context: 'Mon-Fri, 9AM-6PM EST',
   },
   {
@@ -113,7 +113,7 @@ export default function ContactPage() {
               }}
             />
             {/* Decorative globe - right side */}
-            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-25" />
+            <OptimizedImage src="/images/globe.png" alt="" width={500} height={500} className="absolute right-[-80px] md:right-[-40px] top-[10%] w-[200px] md:w-[350px] lg:w-[450px] opacity-55" />
           </div>
           <ContactHeroSection />
         </Section>
@@ -137,7 +137,7 @@ export default function ContactPage() {
             {/* Enhanced purple glow - left side */}
             <div className="absolute left-0 top-[10%] w-[280px] md:w-[550px] h-[400px] md:h-[700px]" style={{ background: 'radial-gradient(ellipse at left center, rgba(132,0,255,0.25) 0%, rgba(115,0,255,0.1) 40%, transparent 75%)' }} />
             {/* Decorative globe - left side (flipped) */}
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-80px] md:left-[-40px] top-[20%] w-[160px] md:w-[260px] lg:w-[340px] opacity-25 -scale-x-100" />
+            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-80px] md:left-[-40px] top-[20%] w-[160px] md:w-[260px] lg:w-[340px] opacity-55 -scale-x-100" />
           </div>
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-between relative z-10 px-4 md:px-6">
             <div className="w-full lg:w-[541px]">
