@@ -5,6 +5,7 @@
  * All sections are positioned absolutely relative to the page container.
  */
 
+import Script from 'next/script';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
