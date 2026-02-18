@@ -1,28 +1,24 @@
 /**
  * Hero Section Component
- *
+ * 
  * Main hero section matching Figma design exactly.
  * Includes headline, subheadline, CTA buttons, and marketplace logos.
- *
+ * 
  * @component
  * @example
  * ```tsx
  * <HeroSection />
  * ```
- *
+ * 
  * Features:
  * - Responsive typography (32px mobile → 58px desktop)
  * - Two CTA buttons (primary and secondary)
  * - Marketplace logos positioned around hero text
  * - Decorative background elements
- * - Trust Index widget for social proof
- *
+ * 
  * @returns {JSX.Element} Hero section with headline, CTAs, and marketplace logos
  */
 
-'use client';
-
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heading, Text } from '@/components/ui/Typography';
@@ -31,15 +27,6 @@ import Container from '@/components/layout/Container';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 
 export default function HeroSection() {
-  useEffect(() => {
-    // Load Trust Index scripts
-    if (typeof window !== 'undefined') {
-      // Reload Trust Index if it's already loaded
-      if ((window as any).TrustIndex) {
-        (window as any).TrustIndex.loadScript();
-      }
-    }
-  }, []);
   return (
     <div className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-visible px-4 md:px-0 w-full">
 
@@ -216,11 +203,6 @@ export default function HeroSection() {
                 className="object-contain"
               />
             </div>
-          </div>
-
-          {/* Trust Index Widget - Customer Reviews & Certifications */}
-          <div className="mt-6 md:mt-8 w-full flex justify-center">
-            <div className="trustindex-widget-cont" style={{ maxWidth: '100%' }} />
           </div>
 
           {/* CTA Buttons - Matching Figma exactly, positioned after subtext */}

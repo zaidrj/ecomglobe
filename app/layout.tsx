@@ -192,21 +192,6 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
-
-        {/* Trust Index Scripts */}
-        <Script
-          src="https://cdn.trustindex.io/loader-cert.js?b6ca26c64eaa9821b49618622ff"
-          strategy="afterInteractive"
-          defer
-          async
-        />
-        <Script
-          src="https://cdn.trustindex.io/loader.js?e4f97a2647ec9831db06ce38718"
-          strategy="afterInteractive"
-          defer
-          async
-        />
-
         {children}
       </body>
     </html>
