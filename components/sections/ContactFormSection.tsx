@@ -14,6 +14,12 @@ import OptimizedImage from '@/components/ui/OptimizedImage';
 import Button from '@/components/ui/Button';
 import type { ContactFormData } from '@/types';
 
+interface SubmitState {
+  isLoading: boolean;
+  success: boolean;
+  error: string | null;
+}
+
 interface ContactFormSectionProps {
   className?: string;
 }
@@ -33,6 +39,11 @@ export default function ContactFormSection({
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
+  const [submitState, setSubmitState] = useState<SubmitState>({
+    isLoading: false,
+    success: false,
+    error: null,
+  });
 
   const handleChange = (field: keyof ContactFormData, value: string | string[]) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -47,7 +58,7 @@ export default function ContactFormSection({
     return emailRegex.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
 
@@ -68,8 +79,50 @@ export default function ContactFormSection({
 
     if (Object.keys(newErrors).length === 0) {
       // Form is valid, submit it
-      console.log('Form submitted:', formData);
-      // TODO: Implement actual form submission
+      setSubmitState({ isLoading: true, success: false, error: null });
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          setSubmitState({ isLoading: false, success: true, error: null });
+          // Reset form
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            revenue: '',
+            platform: '',
+            services: [],
+            message: '',
+          });
+          // Redirect to thank you page after 2 seconds
+          setTimeout(() => {
+            window.location.href = '/thankyou';
+          }, 2000);
+        } else {
+          setSubmitState({
+            isLoading: false,
+            success: false,
+            error: data.error || 'Failed to send message. Please try again.',
+          });
+        }
+      } catch (error) {
+        setSubmitState({
+          isLoading: false,
+          success: false,
+          error: 'An error occurred. Please try again later.',
+        });
+      }
     }
   };
 
@@ -272,23 +325,44 @@ export default function ContactFormSection({
             )}
           </div>
 
+          {/* Success message */}
+          {submitState.success && (
+            <div className="bg-green-500/20 border border-green-500 rounded-[10px] p-4">
+              <p className="text-green-400 text-[14px] sm:text-[15px]">
+                ✓ Message sent successfully! You'll be redirected shortly...
+              </p>
+            </div>
+          )}
+
+          {/* Error message */}
+          {submitState.error && (
+            <div className="bg-red-500/20 border border-red-500 rounded-[10px] p-4">
+              <p className="text-red-400 text-[14px] sm:text-[15px]">
+                ✗ {submitState.error}
+              </p>
+            </div>
+          )}
+
           {/* Submit button */}
           <Button
             type="submit"
+            disabled={submitState.isLoading}
             variant="primary"
             size="sm"
-            className="bg-[#8539bf] content-stretch flex gap-[10px] items-center justify-center px-4 md:px-[23px] lg:px-[25px] py-3 md:py-[18px] lg:py-[20px] rounded-full md:rounded-[100px] shrink-0 w-full lg:w-auto min-h-[44px]"
+            className="bg-[#8539bf] content-stretch flex gap-[10px] items-center justify-center px-4 md:px-[23px] lg:px-[25px] py-3 md:py-[18px] lg:py-[20px] rounded-full md:rounded-[100px] shrink-0 w-full lg:w-auto min-h-[44px] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span className="font-poppins font-bold leading-normal not-italic relative shrink-0 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px] text-white uppercase">
-              Send message
+              {submitState.isLoading ? 'Sending...' : 'Send message'}
             </span>
-            <OptimizedImage
-              src="/images/contact/form/up-right-arrow-11.svg"
-              alt=""
-              width={16}
-              height={16}
-              className="relative shrink-0 size-[14px] sm:size-[15px] lg:size-[16px]"
-            />
+            {!submitState.isLoading && (
+              <OptimizedImage
+                src="/images/contact/form/up-right-arrow-11.svg"
+                alt=""
+                width={16}
+                height={16}
+                className="relative shrink-0 size-[14px] sm:size-[15px] lg:size-[16px]"
+              />
+            )}
           </Button>
         </form>
       </div>

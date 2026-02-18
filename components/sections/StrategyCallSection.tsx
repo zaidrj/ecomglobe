@@ -1,9 +1,8 @@
 /**
- * Strategy Call Section Component
+ * Strategy Call Section Component (Q3)
  *
- * "What you'll get in the free strategy call?" section with stats
- * showing profit, ROI, and success rate figures.
- * Follows the site's dark purple theme.
+ * "What you'll get on the free strategy call?" section
+ * with 3-step cards and honest positioning.
  *
  * @component
  */
@@ -12,95 +11,102 @@ import { Heading, Text } from '@/components/ui/Typography';
 import Container from '@/components/layout/Container';
 import ScrollToSection from '@/components/ui/ScrollToSection';
 
-const stats = [
+const steps = [
   {
-    label: 'Total Profit',
-    value: '$52K',
+    number: '1',
+    title: 'Your Situation',
+    description: 'We review your goals, timeline, and expectations.',
   },
   {
-    label: 'Return on Investment',
-    value: '4x',
+    number: '2',
+    title: 'Our System',
+    description: 'We walk you through how our automated store model works across platforms.',
   },
   {
-    label: 'Success Rate',
-    value: '89%',
+    number: '3',
+    title: 'Your Roadmap',
+    description:
+      "If it's a fit, we outline your personalized 60-day execution plan.",
   },
 ];
 
 export default function StrategyCallSection() {
   return (
-    <Container size="lg" className="py-6 md:py-8 lg:py-10 relative z-10 px-4 md:px-6">
+    <Container size="lg" className="py-10 md:py-16 lg:py-20 relative z-10">
       <div className="flex flex-col items-center gap-6 md:gap-10">
         {/* Section Title */}
         <Heading
           variant="h2"
-          className="text-center max-w-[800px] text-[24px] sm:text-[28px] md:text-[40px] lg:text-[48px] px-2"
+          className="text-center max-w-[800px] text-[24px] sm:text-[28px] md:text-[40px] lg:text-[48px]"
         >
-          <span>What you&apos;ll get in the </span>
-          <span className="text-[#D9B9FF]">free strategy call?</span>
+          <span>What You&apos;ll Get on the </span>
+          <span className="text-[#D9B9FF]">Free Strategy Call?</span>
         </Heading>
 
-        {/* Description */}
-        <Text
-          variant="body"
-          color="muted"
-          className="text-center max-w-[850px] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] px-2 leading-relaxed"
-        >
-          In this call, our senior business consultant will guide you step-by-step on how this automation system works and the actionable steps through which we can help accomplish at least <span className="text-[#E1C8FF] font-semibold">$4,000 in sales</span> for you in just <span className="text-[#E1C8FF] font-semibold">60 days</span>.
+        {/* Subtitle */}
+        <div className="flex flex-col items-center gap-1 max-w-[650px]">
+          <Text
+            variant="body"
+            color="muted"
+            className="text-center text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed"
+          >
+            This is not a sales pitch.
+          </Text>
+          <Text
+            variant="body"
+            color="muted"
+            className="text-center text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed"
+          >
+            It&apos;s a structured evaluation session to see if this fits you.
+          </Text>
+        </div>
+
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-[1000px] mx-auto mt-2 md:mt-4">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="bg-[rgba(115,0,255,0.08)] border border-[#AB78E9] rounded-[14px] md:rounded-[18px] p-6 md:p-8 flex flex-col gap-4 md:gap-5 hover:bg-[rgba(115,0,255,0.14)] transition-all duration-300"
+            >
+              {/* Step Number */}
+              <div className="w-[48px] h-[48px] md:w-[56px] md:h-[56px] rounded-full bg-gradient-to-br from-[rgba(145,55,255,0.4)] to-[rgba(115,0,255,0.2)] border border-[#AB78E9] flex items-center justify-center">
+                <span className="font-secondary font-bold text-[22px] md:text-[26px] text-white">
+                  {step.number}
+                </span>
+              </div>
+
+              {/* Title */}
+              <Heading variant="h4" className="text-[18px] md:text-[22px] lg:text-[24px]">
+                {step.title}
+              </Heading>
+
+              {/* Description */}
+              <Text
+                variant="small"
+                color="muted"
+                className="text-[13px] md:text-[15px] lg:text-[16px] leading-relaxed flex-1"
+              >
+                {step.description}
+              </Text>
+            </div>
+          ))}
+        </div>
+
+        {/* Honest positioning */}
+        <Text variant="body" color="muted" className="text-center max-w-[500px] text-[14px] md:text-[18px] italic leading-relaxed">
+          If it&apos;s not a fit, we&apos;ll tell you honestly.
         </Text>
 
-        {/* Guaranteed High Profits Banner */}
-        <div className="w-full max-w-[1000px] mt-2 md:mt-4">
-          {/* Banner Title */}
-          <div className="text-center mb-6 md:mb-10">
-            <Heading
-              variant="h3"
-              className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px]"
-            >
-              <span className="text-[#E1C8FF]">Guaranteed</span>
-              <span> High Profits Within the First Month</span>
-            </Heading>
-          </div>
-
-          {/* Stats Row — same style as home StatsSection */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
-            {stats.map((stat, index) => (
-              <div key={index} className="flex items-center gap-6 md:gap-0">
-                <div className="flex flex-col items-center justify-center text-center px-6 md:px-10 lg:px-14">
-                  {/* Value */}
-                  <p className="font-secondary font-normal text-[36px] sm:text-[42px] md:text-[52px] lg:text-[61px] text-white whitespace-nowrap leading-tight">
-                    {stat.value}
-                  </p>
-                  {/* Label */}
-                  <p className="mt-1 md:mt-2 text-[#C8CDD2] font-secondary text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] tracking-[2px] md:tracking-[4px] uppercase">
-                    {stat.label}
-                  </p>
-                </div>
-
-                {/* Divider line between stats */}
-                {index < stats.length - 1 && (
-                  <div className="hidden md:block h-[74px] w-[1px] bg-[#AB78E9]/40 shrink-0" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Horizontal divider below stats */}
-          <div className="mt-8 md:mt-12 mx-auto w-full max-w-[600px] h-[1px] bg-gradient-to-r from-transparent via-[#AB78E9]/30 to-transparent" />
-        </div>
-
-        {/* Book Now CTA */}
-        <div className="mt-2 md:mt-4 w-full sm:w-auto flex justify-center">
-          <ScrollToSection
-            targetId="calendly"
-            className="border-[#7300ff] border border-solid px-6 md:px-8 py-3 md:py-[14.784px] rounded-full md:rounded-[19.712px] shadow-[0px_20.698px_38.735px_-48px_rgba(132,0,255,0.33)] font-primary font-bold leading-[1.3] not-italic text-[14px] md:text-[18px] text-center text-white uppercase w-full sm:w-auto transition-all duration-200 hover:shadow-[0px_0px_30px_5px_rgba(132,0,255,0.6),0px_20.698px_38.735px_-48px_rgba(132,0,255,0.5)] active:opacity-80 inline-block cursor-pointer relative z-10"
-            style={{
-              backgroundImage: `radial-gradient(ellipse at center, rgba(132,0,255,0.59) 0%, rgba(115,0,255,0) 100%)`,
-            }}
-          >
-            Book Now
-          </ScrollToSection>
-        </div>
+        {/* CTA */}
+        <ScrollToSection
+          targetId="calendly"
+          className="border-[#7300ff] border border-solid px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_20.698px_38.735px_-48px_rgba(132,0,255,0.33)] font-primary font-bold leading-[1.3] text-[14px] md:text-[18px] text-center text-white uppercase transition-all duration-200 hover:shadow-[0px_0px_30px_5px_rgba(132,0,255,0.6),0px_20.698px_38.735px_-48px_rgba(132,0,255,0.5)] active:opacity-80 inline-block cursor-pointer"
+          style={{
+            backgroundImage: `radial-gradient(ellipse at center, rgba(132,0,255,0.59) 0%, rgba(115,0,255,0) 100%)`,
+          }}
+        >
+          Book Your Free Strategy Call
+        </ScrollToSection>
       </div>
     </Container>
   );

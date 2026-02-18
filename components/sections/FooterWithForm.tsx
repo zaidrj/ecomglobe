@@ -37,19 +37,27 @@ export default function FooterWithForm({ className = "" }: { className?: string 
     setFormState('submitting');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      setFormState('success');
+      if (response.ok) {
+        setFormState('success');
 
-      setTimeout(() => {
-        setFormData({ name: '', email: '', phone: '', message: '' });
-        setFormState('idle');
-      }, 3000);
+        setTimeout(() => {
+          setFormData({ name: '', email: '', phone: '', message: '' });
+          setFormState('idle');
+          window.location.href = '/thankyou';
+        }, 2000);
+      } else {
+        setFormState('error');
+        setTimeout(() => setFormState('idle'), 3000);
+      }
     } catch {
       setFormState('error');
-      setTimeout(() => {
-        setFormState('idle');
-      }, 3000);
+      setTimeout(() => setFormState('idle'), 3000);
     }
   };
 

@@ -1,10 +1,11 @@
 /**
  * Services Page
- * 
+ *
  * Services page structure matching Figma design exactly.
  * All sections are implemented as separate components for maintainability.
  */
 
+import Script from 'next/script';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -325,6 +326,21 @@ export default function ServicesPage() {
           <ServicesCTASection />
         </Section>
       </main>
+
+      {/* Tawk.to Chat Widget */}
+      <Script strategy="afterInteractive">
+        {`
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/6994d3fc7d69841c3c151385/1jhmlo4te';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+          })();
+        `}
+      </Script>
 
       {/* Footer */}
       <Footer />

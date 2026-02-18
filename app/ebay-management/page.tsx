@@ -284,6 +284,21 @@ export default function EbayManagementPage() {
         </Section>
       </main>
 
+      {/* Tawk.to Chat Widget */}
+      <Script strategy="afterInteractive">
+        {`
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/6994d3fc7d69841c3c151385/1jhmlo4te';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+          })();
+        `}
+      </Script>
+
       {/* Footer - Full Width */}
       <Footer />
     </div>

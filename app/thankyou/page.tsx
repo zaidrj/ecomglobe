@@ -2,9 +2,10 @@
  * Thank You Page
  *
  * Displayed after a successful booking or form submission.
- * Includes confirmation, video walkthrough, and closing CTA.
+ * Simplified layout: Hero, Video 1 (full width), Video 2 (full width), Closing CTA.
  */
 
+import Script from 'next/script';
 import type { Metadata } from 'next';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
@@ -25,10 +26,10 @@ export default function ThankYouPage() {
         Skip to main content
       </a>
 
-      <Navbar hideLinks />
+      <Navbar />
 
       <main id="main-content">
-        {/* Hero - Congratulations */}
+        {/* Section 1: Hero - Congratulations */}
         <section className="relative w-full bg-[#050505] overflow-visible">
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             <div
@@ -56,7 +57,7 @@ export default function ThankYouPage() {
                 className="capitalize max-w-[900px] text-[28px] sm:text-[32px] md:text-[48px] lg:text-[58px] leading-[1.2] md:leading-tight"
               >
                 <span>Congratulations, Your Call is </span>
-                <span className="text-[#E1C8FF]">Booked!</span>
+                <span className="text-[#E1C8FF]">Booked.</span>
               </Heading>
 
               <Text
@@ -70,12 +71,11 @@ export default function ThankYouPage() {
           </div>
         </section>
 
-        {/* Step 1: Watch This First - Video 1 */}
+        {/* Section 2: Video 1 - Full Width */}
         <section className="relative w-full bg-[#050505] overflow-hidden">
           <div className="absolute inset-0 pointer-events-none z-0">
             <div className="absolute left-0 top-[20%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at left center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
             <div className="absolute right-0 bottom-[10%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at right center, rgba(145,55,255,0.18) 0%, rgba(115,0,255,0.06) 45%, transparent 80%)' }} />
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute left-[-80px] md:left-[-40px] top-[30%] w-[160px] md:w-[260px] lg:w-[340px] opacity-55 -scale-x-100" />
           </div>
 
           <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-16 lg:py-20">
@@ -93,22 +93,22 @@ export default function ThankYouPage() {
             <div className="w-full max-w-[960px] mx-auto">
               <div className="relative w-full aspect-[16/9] rounded-[16px] md:rounded-[20px] overflow-hidden border border-[#AB78E9]/30">
                 <iframe
-                  src="https://player.vimeo.com/video/1164964616?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0"
+                  src="https://www.youtube.com/embed/Pbi_uhTmptY?rel=0&controls=1&fs=0&modestbranding=1&showinfo=0&iv_load_policy=3"
                   width="1920"
                   height="1080"
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
-                  title="thank you page 1"
+                  title="Watch this first - How to get the most out of our call"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Step 2: Video 2 & 3 */}
+        {/* Section 3: Video 2 - Full Width (single video, not side-by-side) */}
         <section className="relative w-full bg-[#050505] overflow-hidden">
           <div className="absolute inset-0 pointer-events-none z-0">
             <div className="absolute right-0 top-[15%] w-[250px] md:w-[500px] h-[350px] md:h-[650px]" style={{ background: 'radial-gradient(ellipse at right center, rgba(145,55,255,0.2) 0%, rgba(115,0,255,0.08) 45%, transparent 80%)' }} />
@@ -118,51 +118,36 @@ export default function ThankYouPage() {
           <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-16 lg:py-20">
             <div className="flex flex-col items-center gap-4 md:gap-6 mb-8 md:mb-12">
               <Heading variant="h2" className="text-center text-[24px] sm:text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2]">
-                <span>Step 2: </span>
-                <span className="text-[#E1C8FF]">Watch Before Our Call</span>
+                <span>Step 2</span>
               </Heading>
               <Text as="p" variant="body" color="muted" className="text-center text-[14px] sm:text-[16px] md:text-[20px] leading-relaxed max-w-[800px]">
-                After watching the above video, watch the videos below before our call and discover how our clients are getting $4K+ a month using our ecom services.
+                After watching the above video, watch the below video before our call and discover how my clients are getting 4k a month using our ecom services.
               </Text>
             </div>
 
-            {/* Video 2 & 3 side by side */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-[1100px] mx-auto">
+            {/* Video 2 - Full width (single video) */}
+            <div className="w-full max-w-[960px] mx-auto">
               <div className="relative w-full aspect-[16/9] rounded-[16px] md:rounded-[20px] overflow-hidden border border-[#AB78E9]/30">
                 <iframe
-                  src="https://player.vimeo.com/video/1164964705?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0"
+                  src="https://www.youtube.com/embed/1wmz5OgeBS8?rel=0&controls=1&fs=0&modestbranding=1&showinfo=0&iv_load_policy=3"
                   width="1920"
                   height="1080"
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
-                  title="thank you page 2"
-                />
-              </div>
-              <div className="relative w-full aspect-[16/9] rounded-[16px] md:rounded-[20px] overflow-hidden border border-[#AB78E9]/30">
-                <iframe
-                  src="https://player.vimeo.com/video/1164964750?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0"
-                  width="1920"
-                  height="1080"
-                  className="absolute inset-0 w-full h-full"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  title="thank you page 3"
+                  title="How our clients are getting 4k a month"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Ready to Transform Section */}
+        {/* Section 4: Closing */}
         <section className="relative w-full bg-[#050505] overflow-hidden">
           <div className="absolute inset-0 pointer-events-none z-0">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[600px]" style={{ background: 'radial-gradient(ellipse at center, rgba(132,0,255,0.3) 0%, rgba(132,0,255,0.15) 40%, transparent 70%)' }} />
-            <OptimizedImage src="/images/globe.png" alt="" width={400} height={400} className="absolute right-[-60px] md:right-[-30px] top-[10%] w-[140px] md:w-[240px] lg:w-[320px] opacity-55" />
           </div>
 
           <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
@@ -178,6 +163,21 @@ export default function ThankYouPage() {
           </div>
         </section>
       </main>
+
+      {/* Tawk.to Chat Widget */}
+      <Script strategy="afterInteractive">
+        {`
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/6994d3fc7d69841c3c151385/1jhmlo4te';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+          })();
+        `}
+      </Script>
 
       <Footer />
     </div>
