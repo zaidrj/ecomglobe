@@ -1,25 +1,28 @@
 /**
  * Hero Section Component
- * 
+ *
  * Main hero section matching Figma design exactly.
  * Includes headline, subheadline, CTA buttons, and marketplace logos.
- * 
+ *
  * @component
  * @example
  * ```tsx
  * <HeroSection />
  * ```
- * 
+ *
  * Features:
  * - Responsive typography (32px mobile → 58px desktop)
  * - Two CTA buttons (primary and secondary)
  * - Marketplace logos positioned around hero text
  * - Decorative background elements
- * 
+ * - Trust Index widget for social proof
+ *
  * @returns {JSX.Element} Hero section with headline, CTAs, and marketplace logos
  */
 
-import Script from 'next/script';
+'use client';
+
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heading, Text } from '@/components/ui/Typography';
@@ -28,6 +31,15 @@ import Container from '@/components/layout/Container';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 
 export default function HeroSection() {
+  useEffect(() => {
+    // Load Trust Index scripts
+    if (typeof window !== 'undefined') {
+      // Reload Trust Index if it's already loaded
+      if ((window as any).TrustIndex) {
+        (window as any).TrustIndex.loadScript();
+      }
+    }
+  }, []);
   return (
     <div className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-visible px-4 md:px-0 w-full">
 
@@ -69,23 +81,7 @@ export default function HeroSection() {
       </div>
 
       <Container size="xl" className="relative z-10">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 pt-32 md:pt-44 lg:pt-48">
-          {/* Trust Index Widget - Left side (hidden on mobile/tablet) */}
-          <div className="hidden lg:flex flex-col items-center justify-start min-w-[250px]">
-            <div
-              id="ti-trustindex-widget"
-              className="trustindex-widget w-full"
-              style={{
-                minHeight: '300px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-              }}
-            />
-          </div>
-
-          {/* Main content - Center */}
-          <div className="flex flex-col items-center text-center gap-3 md:gap-6 flex-1">
+        <div className="flex flex-col items-center text-center gap-3 md:gap-6 pt-32 md:pt-44 lg:pt-48">
           {/* Main Headline */}
           <Heading 
             variant="display" 
@@ -222,6 +218,11 @@ export default function HeroSection() {
             </div>
           </div>
 
+          {/* Trust Index Widget - Customer Reviews & Certifications */}
+          <div className="mt-6 md:mt-8 w-full flex justify-center">
+            <div className="trustindex-widget-cont" style={{ maxWidth: '100%' }} />
+          </div>
+
           {/* CTA Buttons - Matching Figma exactly, positioned after subtext */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-[23.655px] items-center mt-4 md:mt-4 w-full sm:w-auto">
             {/* First Button - Book Your Free Strategy Call */}
@@ -241,21 +242,6 @@ export default function HeroSection() {
             >
               Get Your Free Platform Audit
             </Link>
-          </div>
-
-          {/* Trust Index Scripts - SEO Reviews Badge */}
-          <Script
-            src='https://cdn.trustindex.io/loader-cert.js?b6ca26c64eaa9821b49618622ff'
-            strategy="afterInteractive"
-            defer
-            async
-          />
-          <Script
-            src='https://cdn.trustindex.io/loader.js?e4f97a2647ec9831db06ce38718'
-            strategy="afterInteractive"
-            defer
-            async
-          />
           </div>
         </div>
       </Container>
