@@ -19,6 +19,7 @@
  * @returns {JSX.Element} Hero section with headline, CTAs, and marketplace logos
  */
 
+import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heading, Text } from '@/components/ui/Typography';
@@ -225,6 +226,20 @@ export default function HeroSection() {
               Get Your Free Platform Audit
             </Link>
           </div>
+
+          {/* Trust Index Scripts - SEO Reviews Badge */}
+          <Script
+            src='https://cdn.trustindex.io/loader-cert.js?b6ca26c64eaa9821b49618622ff'
+            strategy="afterInteractive"
+            defer
+            async
+          />
+          <Script
+            src='https://cdn.trustindex.io/loader.js?e4f97a2647ec9831db06ce38718'
+            strategy="afterInteractive"
+            defer
+            async
+          />
         </div>
       </Container>
     </div>
