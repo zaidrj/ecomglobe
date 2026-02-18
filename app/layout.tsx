@@ -94,6 +94,9 @@ export const metadata: Metadata = {
     canonical: "https://www.ecommglobe.com",
   },
   category: "Ecommerce",
+  verification: {
+    google: "ePia7LcL0w92dtPxrPArnPn6aw09dydCM2sp5wVqpuI",
+  },
 };
 
 export default function RootLayout({
@@ -109,6 +112,19 @@ export default function RootLayout({
             src="https://www.facebook.com/tr?id=915122487675344&ev=PageView&noscript=1"
           />
         </noscript>
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DD018K4HGK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DD018K4HGK');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
