@@ -69,7 +69,23 @@ export default function HeroSection() {
       </div>
 
       <Container size="xl" className="relative z-10">
-        <div className="flex flex-col items-center text-center gap-3 md:gap-6 pt-32 md:pt-44 lg:pt-48">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 pt-32 md:pt-44 lg:pt-48">
+          {/* Trust Index Widget - Left side (hidden on mobile/tablet) */}
+          <div className="hidden lg:flex flex-col items-center justify-start min-w-[250px]">
+            <div
+              id="ti-trustindex-widget"
+              className="trustindex-widget w-full"
+              style={{
+                minHeight: '300px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+              }}
+            />
+          </div>
+
+          {/* Main content - Center */}
+          <div className="flex flex-col items-center text-center gap-3 md:gap-6 flex-1">
           {/* Main Headline */}
           <Heading 
             variant="display" 
@@ -240,6 +256,7 @@ export default function HeroSection() {
             defer
             async
           />
+          </div>
         </div>
       </Container>
     </div>
