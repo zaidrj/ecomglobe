@@ -41,7 +41,7 @@ const serviceOptions: ServiceOption[] = [
   { id: 'tiktok', label: 'TikTok Shop Setup', href: '/tiktok-shop', platform: 'tiktok' },
 ];
 
-export default function Navbar({ className = "" }: { className?: string }) {
+export default function Navbar({ className = "", hideLinks = false }: { className?: string; hideLinks?: boolean }) {
   const pathname = usePathname();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -156,7 +156,7 @@ export default function Navbar({ className = "" }: { className?: string }) {
             </div>
 
             {/* Navigation Menu - Center (Desktop only) */}
-            <nav 
+            {!hideLinks && <nav
               className="hidden lg:flex border border-[#ab78e9] border-solid h-[47px] rounded-[30px] px-4 items-center justify-center relative backdrop-blur-sm bg-white/5"
               aria-label="Main navigation"
               style={{ width: '650px' }}
@@ -219,10 +219,10 @@ export default function Navbar({ className = "" }: { className?: string }) {
                   );
                 })}
               </div>
-            </nav>
+            </nav>}
 
             {/* Right side - Contact button (desktop) & Hamburger (mobile) */}
-            <div className="flex items-center gap-4">
+            {!hideLinks && <div className="flex items-center gap-4">
               {/* Contact US Button - Desktop only */}
               <Link
                 href="/contact"
@@ -265,22 +265,22 @@ export default function Navbar({ className = "" }: { className?: string }) {
                   />
                 </div>
               </button>
-            </div>
+            </div>}
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      {!hideLinks && <div
         className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] lg:hidden transition-opacity duration-300 ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
         aria-hidden="true"
-      />
+      />}
 
       {/* Mobile Menu Panel - Glassmorphic Half Page */}
-      <div 
+      {!hideLinks && <div
         ref={mobileMenuRef}
         id="mobile-menu"
         className={`fixed top-0 right-0 h-full w-[75%] max-w-[400px] z-[60] lg:hidden transform transition-transform duration-500 ease-out ${
@@ -419,7 +419,7 @@ export default function Navbar({ className = "" }: { className?: string }) {
             <span className="text-white/40 text-sm font-primary">© 2024 EcommGlobe</span>
           </div>
         </div>
-      </div>
+      </div>}
 
       {/* CSS for animations */}
       <style jsx>{`

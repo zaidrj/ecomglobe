@@ -25,7 +25,7 @@ export default function ThankYouPage() {
         Skip to main content
       </a>
 
-      <Navbar />
+      <Navbar hideLinks />
 
       <main id="main-content">
         {/* Hero - Congratulations */}

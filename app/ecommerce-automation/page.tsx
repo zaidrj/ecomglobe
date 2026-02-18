@@ -13,7 +13,6 @@ import CalendlyWidget from '@/components/sections/CalendlyWidget';
 import StrategyCallSection from '@/components/sections/StrategyCallSection';
 import CallProcessSection from '@/components/sections/CallProcessSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import FooterWithForm from '@/components/sections/FooterWithForm';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 
 export const metadata: Metadata = {
@@ -38,7 +37,7 @@ export default function EcommerceAutomationPage() {
       </a>
 
       {/* Navbar */}
-      <Navbar />
+      <Navbar hideLinks />
 
       {/* Main content */}
       <main id="main-content">
@@ -218,9 +217,6 @@ export default function EcommerceAutomationPage() {
           <TestimonialsSection />
         </Section>
       </main>
-
-      {/* Footer with Contact Form */}
-      <FooterWithForm />
     </div>
   );
 }
